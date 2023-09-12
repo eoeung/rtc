@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 웹 소켓 객체 생성
+      const ws = new WebSocket('ws://localhost:3000');
+
+      // 연결이 수립되면, 서버에 메시지 전송
+      ws.onopen = function (event) {
+        ws.send('Client message: Hi!');
+      };
+
+      // 서버로부터 메시지 수신
+      ws.onmessage = function (event) {
+        console.log('Server Message : ', event.data);
+      };
+
+      // 에러
+      ws.onerror = function (event) {
+        console.log('Server error message : ', event.data);
+      };
+    </script>
+  </body>
+</html>
