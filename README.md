@@ -2,3 +2,4 @@
 
 ### 참고 사이트
 > https://poiemaweb.com/nodejs-socketio
+> https://socket.io/docs/v4/tutorial/introduction (socket.io 공식 문서)
